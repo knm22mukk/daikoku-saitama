@@ -1,5 +1,5 @@
-import Card from '@/_components/Card';
 import { getBlogList } from '@/_libs/microcms';
+import Card from '@/app/_components/Card';
 
 export default async function Blogs() {
   const data = await getBlogList();

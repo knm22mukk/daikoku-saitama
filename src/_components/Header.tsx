@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
-import { pageLinks } from '@/app/_constants';
+import { pageLinks } from '@/_constants';
 
 export default function Header() {
   return (
-    <header className='flex border-b-2'>
+    <header className='flex border-b-2 bg-blue-400'>
       <Link href='/'>大黒埼玉</Link>
       <nav>
         <ul className='px-4'>

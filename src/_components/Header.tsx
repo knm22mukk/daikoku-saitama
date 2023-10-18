@@ -2,6 +2,8 @@ import Link from 'next/link';
 
 import { pageLinks } from '@/_constants';
 
+import ThemeSwitch from './ThemeSwitch';
+
 export default function Header() {
   return (
     <header className='flex border-b-2 bg-blue-400'>
@@ -15,6 +17,7 @@ export default function Header() {
           ))}
         </ul>
       </nav>
+      <ThemeSwitch />
     </header>
   );
 }

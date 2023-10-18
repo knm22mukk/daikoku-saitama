@@ -1,4 +1,5 @@
 import Header from '@/_components/Header';
+import Provider from '@/_components/ThemeProvider';
 import '@/globals.css';
 
 import type { Metadata } from 'next';
@@ -10,10 +11,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='ja'>
-      <body>
-        <Header />
-        {children}
+    <html lang='ja' suppressHydrationWarning>
+      <body className='dark:bg-gray-800 dark:text-white'>
+        <Provider>
+          <Header />
+          {children}
+        </Provider>
       </body>
     </html>
   );

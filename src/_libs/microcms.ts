@@ -10,7 +10,7 @@ import type {
 export type Blog = {
   title: string;
   description: string;
-  image: MicroCMSImage;
+  eyecatch: MicroCMSImage;
   body: string;
   categories: Category[];
 } & MicroCMSContentId &

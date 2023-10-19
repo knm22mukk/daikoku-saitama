@@ -21,6 +21,13 @@ export type Category = {
 } & MicroCMSContentId &
   MicroCMSDate;
 
+export type Catalog = {
+  title: string;
+  path: string;
+  eyecatch: MicroCMSImage;
+} & MicroCMSContentId &
+  MicroCMSDate;
+
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error('MICROCMS_SERVICE_DOMAIN is required');
 }
@@ -51,6 +58,15 @@ export const getBlogDetail = async (contentId: string, queries?: MicroCMSQueries
     queries,
   });
   return detailData;
+};
+
+// カタログ一覧を取得
+export const getCatalogList = async (queries?: MicroCMSQueries) => {
+  const listData = await client.getList<Catalog>({
+    endpoint: 'catalogs',
+    queries,
+  });
+  return listData;
 };
 
 //カテゴリーを取得

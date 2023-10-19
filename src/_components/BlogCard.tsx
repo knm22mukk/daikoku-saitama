@@ -6,7 +6,7 @@ type Props = {
   blogs: Blog[];
 };
 
-export default function Card({ blogs }: Props) {
+export default function BlogCard({ blogs }: Props) {
   if (!blogs || blogs.length === 0) {
     return <p>記事がありません。</p>;
   }

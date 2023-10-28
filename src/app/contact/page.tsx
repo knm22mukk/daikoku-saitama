@@ -2,6 +2,9 @@
 
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
+import { AiOutlineMail } from 'react-icons/ai';
+
+import { IconButton, OutlineButton, PrimaryButton } from '@/_components/Button';
 
 type FormValue = {
   name: string;
@@ -132,7 +135,13 @@ export default function Contact() {
           )}
         </div>
         <div>
-          <button type='submit'>送信</button>
+          <PrimaryButton type='submit' name='送信' />
+        </div>
+        <div>
+          <OutlineButton type='submit' name='送信' />
+        </div>
+        <div>
+          <IconButton type='submit' icon={<AiOutlineMail />} name='送信' />
         </div>
       </form>
     </>

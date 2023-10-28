@@ -1,5 +1,6 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 
 type FormValue = {
@@ -12,6 +13,7 @@ type FormValue = {
 };
 
 export default function Contact() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -23,13 +25,22 @@ export default function Contact() {
     Object.entries(data).forEach(([key, value]) => {
       formData.append(key, value);
     });
-    await fetch(process.env.NEXT_PUBLIC_NEWT_FORM_ENDPOINT ?? '', {
-      method: 'POST',
-      body: formData,
-      headers: {
-        Accept: 'application/json',
-      },
-    });
+    try {
+      const response = await fetch(process.env.NEXT_PUBLIC_NEWT_FORM_ENDPOINT ?? '', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Accept: 'application/json',
+        },
+      });
+      if (response.ok) {
+        router.push('/contact/thanks');
+      } else {
+        router.push('/contact/error');
+      }
+    } catch (error) {
+      router.push('/contact/error');
+    }
   });
 
   return (
@@ -51,7 +62,7 @@ export default function Contact() {
           )}
         </div>
         <div>
-          <label htmlFor='email'>メールアドレス</label>
+          <label htmlFor='email'>メールアドレス*</label>
           <input
             type='email'
             id='email'
@@ -65,7 +76,7 @@ export default function Contact() {
           )}
         </div>
         <div>
-          <label htmlFor='company'>会社名</label>
+          <label htmlFor='company'>会社名*</label>
           <input
             type='text'
             id='company'
@@ -79,7 +90,7 @@ export default function Contact() {
           )}
         </div>
         <div>
-          <label htmlFor='address'>住所</label>
+          <label htmlFor='address'>住所*</label>
           <input
             type='text'
             id='address'
@@ -93,7 +104,7 @@ export default function Contact() {
           )}
         </div>
         <div>
-          <label htmlFor='tel'>電話番号</label>
+          <label htmlFor='tel'>電話番号*</label>
           <input
             type='text'
             id='tel'
@@ -107,7 +118,7 @@ export default function Contact() {
           )}
         </div>
         <div>
-          <label htmlFor='message'>メッセージ</label>
+          <label htmlFor='message'>メッセージ*</label>
           <textarea
             id='message'
             rows={5}

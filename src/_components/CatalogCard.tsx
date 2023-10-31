@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import Container from '@/_components/Container';
 import { Catalog } from '@/_libs/microcms';
 
 type Props = {
@@ -11,23 +12,27 @@ export default function CatalogCard({ catalogs }: Props) {
     return <p>カタログがありません。</p>;
   }
   return (
-    <ul>
-      {catalogs.map((catalog) => (
-        <li key={catalog.id}>
+    <Container>
+      <div className='grid grid-cols-2 gap-x-6 gap-y-10 py-6 sm:grid-cols-3 lg:grid-cols-4 xl:gap-x-8'>
+        {catalogs.map((catalog) => (
           <a
+            key={catalog.id}
             href={`http://dcs4.icata.net/iportal/oc.do?v=DKU00001&d=DKUD001&c=${catalog.path}&p=1`}
-            target='_blank'
+            className='rounded-md p-2'
           >
-            <Image
-              src={catalog.eyecatch.url}
-              height={200}
-              width={150}
-              alt={catalog.title}
-            />
+            <div className='overflow-hidden shadow-md lg:h-80'>
+              <Image
+                src={catalog.eyecatch.url}
+                alt={catalog.title}
+                width={160}
+                height={230}
+                className='h-full w-full object-cover object-center'
+              />
+            </div>
+            <h3 className='text-md mt-3 text-center font-bold'>{catalog.title}</h3>
           </a>
-          <p>{catalog.title}</p>
-        </li>
-      ))}
-    </ul>
+        ))}
+      </div>
+    </Container>
   );
 }

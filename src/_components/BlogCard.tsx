@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
+import Container from '@/_components/Container';
 import { Blog } from '@/_libs/microcms';
 
 type Props = {
@@ -11,14 +13,42 @@ export default function BlogCard({ blogs }: Props) {
     return <p>記事がありません。</p>;
   }
   return (
-    <ul>
-      {blogs.map((blog) => (
-        <li key={blog.id}>
-          <Link href={`/blogs/${blog.id}`}>
-            <p>{blog.title}</p>
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <Container>
+      <div className='grid place-content-center place-items-center justify-center gap-6 sm:grid-cols-2 lg:grid-cols-3'>
+        {blogs.map((blog) => (
+          <div
+            key={blog.id}
+            className='max-w-sm rounded-md border border-gray-200 shadow-md'
+          >
+            <Link href={`/blogs/${blog.id}`}>
+              <Image
+                src={blog.eyecatch.url}
+                alt={blog.title}
+                width={384}
+                height={216}
+                className='rounded-t-md'
+              />
+            </Link>
+
+            <div className='flex flex-1 flex-col p-4 sm:p-6'>
+              <h2 className='mb-2 text-lg font-semibold'>
+                <Link
+                  href={`/blogs/${blog.id}`}
+                  className='transition duration-100 hover:text-indigo-500 active:text-indigo-600'
+                >
+                  {blog.title}
+                </Link>
+              </h2>
+
+              <p className='mb-8 text-gray-500'>{blog.description}</p>
+
+              <div className='flex items-center gap-2'>
+                <span className='text-md block text-gray-400'>{blog.publishedAt}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Container>
   );
 }

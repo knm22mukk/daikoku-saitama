@@ -2,9 +2,10 @@
 
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
-import { AiOutlineMail } from 'react-icons/ai';
 
-import { IconButton, OutlineButton, PrimaryButton } from '@/_components/Button';
+import { PrimaryButton } from '@/_components/Button';
+import Container from '@/_components/Container';
+import PageHeader from '@/_components/PageHeader';
 
 type FormValue = {
   name: string;
@@ -47,16 +48,23 @@ export default function Contact() {
   });
 
   return (
-    <>
-      <h2>お問い合わせページ</h2>
-      <form onSubmit={onSubmit}>
-        <div>
-          <label htmlFor='name'>氏名*</label>
+    <Container>
+      <PageHeader
+        subHeading='contact'
+        title='お問い合わせ'
+        description='お問い合わせはこちらのページからお願いいたします。商品に関して、記事に関して、サイトについて、お気軽にお問い合わせください。担当者より3営業日以内にご連絡させていただきます。'
+      />
+      <form onSubmit={onSubmit} className='mx-auto max-w-screen-md'>
+        <div className='mb-4'>
+          <label htmlFor='name' className='inline-block sm:text-base'>
+            氏名<span className='ml-1 text-red-500'>*</span>
+          </label>
           <input
             type='text'
             id='name'
             {...register('name', { required: '氏名は入力必須です。' })}
             aria-describedby='error-name-required'
+            className='w-full rounded border px-3 py-2 outline-none ring-indigo-300 transition duration-100 focus:ring'
           />
           {errors?.name && (
             <span id='error-name-required' aria-live='assertive'>
@@ -64,13 +72,16 @@ export default function Contact() {
             </span>
           )}
         </div>
-        <div>
-          <label htmlFor='email'>メールアドレス*</label>
+        <div className='mb-4'>
+          <label htmlFor='email' className='inline-block sm:text-base'>
+            メールアドレス<span className='ml-1 text-red-500'>*</span>
+          </label>
           <input
             type='email'
             id='email'
             {...register('email', { required: 'メールアドレスは入力必須です。' })}
             aria-describedby='error-email-required'
+            className='w-full rounded border px-3 py-2 outline-none ring-indigo-300 transition duration-100 focus:ring'
           />
           {errors?.email && (
             <span id='error-email-required' aria-live='assertive'>
@@ -78,13 +89,16 @@ export default function Contact() {
             </span>
           )}
         </div>
-        <div>
-          <label htmlFor='company'>会社名*</label>
+        <div className='mb-4'>
+          <label htmlFor='company' className='inline-block sm:text-base'>
+            会社名<span className='ml-1 text-red-500'>*</span>
+          </label>
           <input
             type='text'
             id='company'
             {...register('company', { required: '会社名は入力必須です。' })}
             aria-describedby='error-company-required'
+            className='w-full rounded border px-3 py-2 outline-none ring-indigo-300 transition duration-100 focus:ring'
           />
           {errors?.company && (
             <span id='error-company-required' aria-live='assertive'>
@@ -92,13 +106,16 @@ export default function Contact() {
             </span>
           )}
         </div>
-        <div>
-          <label htmlFor='address'>住所*</label>
+        <div className='mb-4'>
+          <label htmlFor='address' className='inline-block sm:text-base'>
+            住所<span className='ml-1 text-red-500'>*</span>
+          </label>
           <input
             type='text'
             id='address'
             {...register('address', { required: '住所は入力必須です。' })}
             aria-describedby='error-address-required'
+            className='w-full rounded border px-3 py-2 outline-none ring-indigo-300 transition duration-100 focus:ring'
           />
           {errors?.address && (
             <span id='error-address-required' aria-live='assertive'>
@@ -106,13 +123,16 @@ export default function Contact() {
             </span>
           )}
         </div>
-        <div>
-          <label htmlFor='tel'>電話番号*</label>
+        <div className='mb-4'>
+          <label htmlFor='tel' className='inline-block sm:text-base'>
+            電話番号<span className='ml-1 text-red-500'>*</span>
+          </label>
           <input
             type='text'
             id='tel'
             {...register('tel', { required: '電話番号は入力必須です。' })}
             aria-describedby='error-tel-required'
+            className='w-full rounded border px-3 py-2 outline-none ring-indigo-300 transition duration-100 focus:ring'
           />
           {errors?.tel && (
             <span id='error-tel-required' aria-live='assertive'>
@@ -120,13 +140,15 @@ export default function Contact() {
             </span>
           )}
         </div>
-        <div>
-          <label htmlFor='message'>メッセージ*</label>
+        <div className='mb-4'>
+          <label htmlFor='message' className='inline-block sm:text-base'>
+            メッセージ<span className='ml-1 text-red-500'>*</span>
+          </label>
           <textarea
             id='message'
-            rows={5}
             {...register('message', { required: 'お問い合わせ内容は入力必須です。' })}
             aria-describedby='error-message-required'
+            className='h-64 w-full rounded border px-3 py-2 outline-none ring-indigo-300 transition duration-100 focus:ring'
           ></textarea>
           {errors?.message && (
             <span id='error-message-required' aria-live='assertive'>
@@ -137,13 +159,7 @@ export default function Contact() {
         <div>
           <PrimaryButton type='submit' name='送信' />
         </div>
-        <div>
-          <OutlineButton type='submit' name='送信' />
-        </div>
-        <div>
-          <IconButton type='submit' icon={<AiOutlineMail />} name='送信' />
-        </div>
       </form>
-    </>
+    </Container>
   );
 }

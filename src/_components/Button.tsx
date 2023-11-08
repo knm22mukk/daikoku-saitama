@@ -2,13 +2,15 @@ type Props = {
   type: 'button' | 'submit';
   icon?: React.ReactNode;
   name: string;
+  onClick?: () => void;
 };
 
-export function PrimaryButton({ type, name }: Props) {
+export function PrimaryButton({ type, name, onClick }: Props) {
   return (
     <button
       type={type}
       className='text-md mb-2 mr-2 rounded-lg bg-blue-500 px-5 py-2.5 font-medium text-white hover:bg-blue-700'
+      onClick={onClick}
     >
       {name}
     </button>

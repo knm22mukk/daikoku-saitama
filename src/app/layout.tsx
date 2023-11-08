@@ -1,3 +1,4 @@
+import Footer from '@/_components/Footer';
 import Header from '@/_components/Header';
 import Provider from '@/_components/ThemeProvider';
 import '@/globals.css';
@@ -12,10 +13,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='ja' suppressHydrationWarning>
-      <body className='bg-gray-50 text-gray-800 dark:bg-gray-800 dark:text-white'>
+      <body className='flex min-h-screen flex-col bg-gray-50 text-gray-800 dark:bg-gray-800 dark:text-white'>
         <Provider>
           <Header />
-          {children}
+          <main className='flex-1'>{children}</main>
+          <Footer />
         </Provider>
       </body>
     </html>

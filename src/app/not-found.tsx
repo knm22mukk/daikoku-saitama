@@ -5,7 +5,7 @@ import PageHeader from '@/_components/PageHeader';
 
 export default function NotFound() {
   return (
-    <div className='h-screen py-6 sm:py-8 lg:py-12'>
+    <div className='py-24 sm:py-32'>
       <PageHeader
         subHeading='404 not found'
         title='ページが見つかりませんでした'

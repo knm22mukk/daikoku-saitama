@@ -10,7 +10,7 @@ import PageHeader from '@/_components/PageHeader';
 export default function Error() {
   const router = useRouter();
   return (
-    <div className='h-screen'>
+    <div className='py-6 sm:py-8 lg:py-12'>
       <PageHeader
         subHeading='error'
         title='お問合せ送信中にエラーが発生しました'

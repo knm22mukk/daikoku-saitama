@@ -10,7 +10,7 @@ import PageHeader from '@/_components/PageHeader';
 export default function Thanks() {
   const router = useRouter();
   return (
-    <div className='h-screen'>
+    <div className='py-6 sm:py-8 lg:py-12'>
       <PageHeader
         subHeading='complete'
         title='お問合せが正常に送信できました'

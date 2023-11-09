@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import Container from '@/_components/Container';
+import ConvertDate from '@/_components/ConvertDate';
 import { Blog } from '@/_libs/microcms';
 
 type Props = {
@@ -43,7 +44,9 @@ export default function BlogCard({ blogs }: Props) {
               <p className='mb-8 text-gray-500'>{blog.description}</p>
 
               <div className='flex items-center gap-2'>
-                <span className='text-md block text-gray-400'>{blog.publishedAt}</span>
+                <span className='text-md block text-gray-400'>
+                  <ConvertDate convertDate={blog.publishedAt} />
+                </span>
               </div>
             </div>
           </div>

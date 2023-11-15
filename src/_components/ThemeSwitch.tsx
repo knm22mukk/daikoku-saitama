@@ -20,7 +20,7 @@ export default function ThemeSwitch() {
       type='button'
       aria-label='ThemeChangeButton'
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className='inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-xl text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700'
+      className='inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-xl text-white hover:bg-gray-100 hover:text-gray-800'
     >
       {mounted && <>{theme === 'dark' ? <HiOutlineSun /> : <HiOutlineMoon />}</>}
     </button>

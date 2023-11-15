@@ -8,26 +8,22 @@ import ThemeSwitch from './ThemeSwitch';
 
 export default function Header() {
   return (
-    <header className='bg-white dark:bg-gray-800'>
+    <header className='bg-[#3d3d3d]'>
       <nav className='w-full border-b border-gray-200 dark:border-gray-600'>
         <div className='mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4'>
           <Link href='/' className='flex items-center space-x-3 rtl:space-x-reverse'>
             <Image
-              src=''
-              className='h-8'
-              width={200}
-              height={100}
-              alt='大黒工業株式会社 埼玉営業所'
+              src='/images/daikoku-logo.png'
+              width={282}
+              height={70}
+              alt='大黒工業株式会社'
             />
           </Link>
           <div className='flex space-x-3 rtl:space-x-reverse md:order-2 md:space-x-0'>
             <ThemeSwitch />
             <button
-              data-collapse-toggle='navbar-sticky'
               type='button'
-              className='inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-xl text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 md:hidden'
-              aria-controls='navbar-sticky'
-              aria-expanded='false'
+              className='inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-xl text-white hover:bg-gray-200 hover:text-gray-800 md:hidden'
             >
               <AiOutlineMenu />
             </button>
@@ -40,7 +36,7 @@ export default function Header() {
               {pageLinks.map((link) => (
                 <li
                   key={link.title}
-                  className='px-3 py-2 font-bold hover:text-blue-700 hover:underline md:p-0'
+                  className='px-3 py-2 font-bold text-white hover:underline md:p-0'
                 >
                   <Link href={link.path}>{link.title}</Link>
                 </li>

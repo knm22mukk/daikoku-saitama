@@ -14,61 +14,62 @@ export default function Header() {
   };
 
   return (
-    <header className='h-24 w-full border-b border-gray-200 bg-[#3d3d3d] dark:border-gray-600'>
-      <nav className=''>
-        <div className='mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4'>
-          <Link href='/' className='flex items-center space-x-3 rtl:space-x-reverse'>
-            <Image
-              src='/images/daikoku-logo.png'
-              width={282}
-              height={70}
-              alt='大黒工業株式会社'
-            />
+    <header className='flex items-center justify-between bg-[#3D3D3D] px-3 py-5'>
+      <Link href='/'>
+        <Image
+          src='/images/daikoku-logo.png'
+          height={56}
+          width={224}
+          alt='大黒工業株式会社'
+        />
+      </Link>
+      <div className='flex items-center space-x-4 leading-5 md:space-x-6'>
+        {pageLinks.map((link) => (
+          <Link
+            key={link.title}
+            href={link.path}
+            className='hidden font-medium text-white hover:underline sm:block'
+          >
+            {link.title}
           </Link>
-          <div className='flex space-x-3 rtl:space-x-reverse md:order-2 md:space-x-0'>
-            <ThemeSwitch />
+        ))}
+        <button
+          aria-label='ToggleMenu'
+          onClick={handleClick}
+          className='inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-xl text-white hover:bg-gray-100 hover:text-gray-800 sm:hidden'
+        >
+          <AiOutlineMenu />
+        </button>
+        <ThemeSwitch />
+        <div
+          className={`fixed left-0 top-0 z-10 h-full w-full transform bg-white opacity-95 duration-300 ease-in-out dark:bg-gray-900 ${
+            menuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          <div className='flex justify-end'>
             <button
-              type='button'
-              className='inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-xl text-white hover:bg-gray-200 hover:text-gray-800 md:hidden'
+              className='mr-8 mt-11 h-8 w-8 text-2xl'
+              aria-label='ToggleMenu'
               onClick={handleClick}
             >
-              {menuOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
+              <AiOutlineClose />
             </button>
           </div>
-          <div className='hidden w-full items-center justify-between md:order-1 md:flex md:w-auto'>
-            <ul className='mt-4 flex flex-col rounded-lg p-4 md:mt-0 md:flex-row md:space-x-8 md:p-0'>
-              {pageLinks.map((link) => (
-                <li
-                  key={link.title}
-                  className='px-3 py-2 font-bold text-white hover:underline md:p-0'
-                >
-                  <Link href={link.path}>{link.title}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div className='mx-3 md:hidden'>
-          <div
-            className={`fixed right-0 top-24 z-20 h-full w-full bg-gray-300 opacity-95 duration-300 ease-in-out dark:bg-gray-600 ${
-              menuOpen ? 'translate-x-0' : 'translate-x-full'
-            }`}
-          >
-            <nav className='fixed h-full w-full py-10'>
-              {pageLinks.map((link) => (
+          <nav className='fixed mt-8 h-full'>
+            {pageLinks.map((link) => (
+              <div key={link.title} className='px-12 py-4'>
                 <Link
-                  key={link.title}
                   href={link.path}
-                  className='flex justify-center py-5 text-2xl font-bold tracking-wide hover:underline'
+                  className='text-2xl font-bold tracking-widest hover:underline dark:text-gray-100'
                   onClick={handleClick}
                 >
                   {link.title}
                 </Link>
-              ))}
-            </nav>
-          </div>
+              </div>
+            ))}
+          </nav>
         </div>
-      </nav>
+      </div>
     </header>
   );
 }

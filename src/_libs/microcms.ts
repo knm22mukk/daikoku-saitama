@@ -25,6 +25,7 @@ export type Catalog = {
   title: string;
   path: string;
   eyecatch: MicroCMSImage;
+  is_new: boolean;
 } & MicroCMSContentId &
   MicroCMSDate;
 

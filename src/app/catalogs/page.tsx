@@ -3,7 +3,7 @@ import PageHeader from '@/_components/PageHeader';
 import { getCatalogList } from '@/_libs/microcms';
 
 export default async function Catarog() {
-  const data = await getCatalogList();
+  const data = await getCatalogList({ limit: 20 });
   return (
     <>
       <PageHeader

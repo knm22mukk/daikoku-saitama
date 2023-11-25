@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import { Badge } from '@/_components/Button';
 import Container from '@/_components/Container';
 import { Catalog } from '@/_libs/microcms';
 
@@ -29,7 +30,10 @@ export default function CatalogCard({ catalogs }: Props) {
                 className='h-full w-full object-cover object-center'
               />
             </div>
-            <h3 className='text-md mt-3 text-center font-bold'>{catalog.title}</h3>
+            <h3 className='text-md mt-3 text-center font-bold'>
+              {catalog.is_new && <Badge name='new' />}
+              {catalog.title}
+            </h3>
           </a>
         ))}
       </div>

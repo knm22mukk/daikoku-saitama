@@ -11,7 +11,7 @@ export default function Feature() {
         <PageHeader
           subHeading='feature'
           title='大黒工業株式会社の強み'
-          description='当社ならではの強みを紹介します'
+          description='当社の特徴や強みを紹介します'
         />
         <div className='grid gap-8 py-6 sm:grid-cols-2 md:gap-12 xl:grid-cols-3 xl:gap-16'>
           {featureItems.map((item) => (

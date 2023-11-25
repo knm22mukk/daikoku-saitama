@@ -11,14 +11,14 @@ export default function Gallery() {
       <PageHeader
         subHeading='products'
         title='大黒工業株式会社の製造商品'
-        description='当社で製造している製品を一部ご紹介します'
+        description='当社で製造している製品の一部をご紹介します'
       />
       <Container>
         <div className='mb-4 grid grid-cols-2 gap-4 sm:grid-cols-3 md:mb-8 md:grid-cols-4 md:gap-8'>
           {galleryItems.map((item) => (
             <div
               key={item.title}
-              className='group relative mx-auto flex h-56 w-56 items-end justify-center overflow-hidden rounded-lg shadow-lg sm:h-48 sm:w-48 lg:h-56 lg:w-56'
+              className='group relative mx-auto flex h-48 w-48 items-end justify-center overflow-hidden rounded-lg shadow-lg lg:h-56 lg:w-56'
             >
               <Image
                 src={item.image}

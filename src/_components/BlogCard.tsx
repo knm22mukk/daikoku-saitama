@@ -19,7 +19,7 @@ export default function BlogCard({ blogs }: Props) {
         {blogs.map((blog) => (
           <div
             key={blog.id}
-            className='max-w-sm rounded-md border border-gray-200 shadow-md'
+            className='max-w-sm rounded-md border border-gray-200 shadow-md duration-200 hover:scale-105'
           >
             <Link href={`/blogs/${blog.id}`}>
               <Image
@@ -27,15 +27,14 @@ export default function BlogCard({ blogs }: Props) {
                 alt={blog.title}
                 width={384}
                 height={216}
-                className='rounded-t-md'
+                className='rounded-t-md hover:opacity-90'
               />
             </Link>
-
             <div className='flex flex-1 flex-col p-4 sm:p-6'>
               <h2 className='mb-2 text-lg font-semibold'>
                 <Link
                   href={`/blogs/${blog.id}`}
-                  className='transition duration-100 hover:text-indigo-500 active:text-indigo-600'
+                  className='transition duration-100 hover:text-indigo-500 hover:underline active:text-indigo-600'
                 >
                   {blog.title}
                 </Link>

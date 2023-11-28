@@ -65,7 +65,7 @@ export default function Contact() {
               id='name'
               {...register('name', { required: '氏名は入力必須です。' })}
               aria-describedby='error-name-required'
-              className='w-full rounded border px-3 py-2 outline-none ring-indigo-300 transition duration-100 focus:ring'
+              className='w-full rounded border px-3 py-2 outline-none ring-blue-300 transition duration-100 focus:ring'
             />
             {errors?.name && (
               <span id='error-name-required' aria-live='assertive'>
@@ -82,7 +82,7 @@ export default function Contact() {
               id='email'
               {...register('email', { required: 'メールアドレスは入力必須です。' })}
               aria-describedby='error-email-required'
-              className='w-full rounded border px-3 py-2 outline-none ring-indigo-300 transition duration-100 focus:ring'
+              className='w-full rounded border px-3 py-2 outline-none ring-blue-300 transition duration-100 focus:ring'
             />
             {errors?.email && (
               <span id='error-email-required' aria-live='assertive'>
@@ -99,7 +99,7 @@ export default function Contact() {
               id='company'
               {...register('company', { required: '会社名は入力必須です。' })}
               aria-describedby='error-company-required'
-              className='w-full rounded border px-3 py-2 outline-none ring-indigo-300 transition duration-100 focus:ring'
+              className='w-full rounded border px-3 py-2 outline-none ring-blue-300 transition duration-100 focus:ring'
             />
             {errors?.company && (
               <span id='error-company-required' aria-live='assertive'>
@@ -116,7 +116,7 @@ export default function Contact() {
               id='address'
               {...register('address', { required: '住所は入力必須です。' })}
               aria-describedby='error-address-required'
-              className='w-full rounded border px-3 py-2 outline-none ring-indigo-300 transition duration-100 focus:ring'
+              className='w-full rounded border px-3 py-2 outline-none ring-blue-300 transition duration-100 focus:ring'
             />
             {errors?.address && (
               <span id='error-address-required' aria-live='assertive'>
@@ -133,7 +133,7 @@ export default function Contact() {
               id='tel'
               {...register('tel', { required: '電話番号は入力必須です。' })}
               aria-describedby='error-tel-required'
-              className='w-full rounded border px-3 py-2 outline-none ring-indigo-300 transition duration-100 focus:ring'
+              className='w-full rounded border px-3 py-2 outline-none ring-blue-300 transition duration-100 focus:ring'
             />
             {errors?.tel && (
               <span id='error-tel-required' aria-live='assertive'>
@@ -149,7 +149,7 @@ export default function Contact() {
               id='message'
               {...register('message', { required: 'お問い合わせ内容は入力必須です。' })}
               aria-describedby='error-message-required'
-              className='h-64 w-full rounded border px-3 py-2 outline-none ring-indigo-300 transition duration-100 focus:ring'
+              className='h-64 w-full rounded border px-3 py-2 outline-none ring-blue-300 transition duration-100 focus:ring'
             ></textarea>
             {errors?.message && (
               <span id='error-message-required' aria-live='assertive'>

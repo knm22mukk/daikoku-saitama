@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Badge } from '@/_components/Button';
 import Container from '@/_components/Container';
 import ConvertDate from '@/_components/ConvertDate';
-import { Blog } from '@/_libs/microcms';
+import { Blog, Category } from '@/_libs/microcms';
 
 type Props = {
   blogs: Blog[];
@@ -30,18 +31,13 @@ export default function BlogCard({ blogs }: Props) {
                 className='rounded-t-md hover:opacity-90'
               />
             </Link>
-            <div className='flex flex-1 flex-col p-4 sm:p-6'>
-              <h2 className='mb-2 text-lg font-semibold'>
-                <Link
-                  href={`/blogs/${blog.id}`}
-                  className='transition duration-100 hover:text-indigo-500 hover:underline active:text-indigo-600'
-                >
-                  {blog.title}
-                </Link>
-              </h2>
-
-              <p className='mb-8 text-gray-500'>{blog.description}</p>
-
+            <div className='px-4 py-2'>
+              {blog.categories.map((category: Category) => (
+                <Badge key={category.id} name={category.name} />
+              ))}
+            </div>
+            <div className='flex flex-1 flex-col px-4 py-2'>
+              <p className='mb-8 text-gray-500 dark:text-white'>{blog.description}</p>
               <div className='flex items-center gap-2'>
                 <span className='text-md block text-gray-400'>
                   <ConvertDate convertDate={blog.publishedAt} />

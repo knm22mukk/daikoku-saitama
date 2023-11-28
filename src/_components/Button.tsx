@@ -42,7 +42,7 @@ export function IconButton({ type, icon, name }: Props) {
 
 export function Badge({ name }: Props) {
   return (
-    <span className='inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600'>
+    <span className='mr-2 inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600'>
       {name}
     </span>
   );

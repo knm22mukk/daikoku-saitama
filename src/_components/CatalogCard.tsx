@@ -19,7 +19,8 @@ export default function CatalogCard({ catalogs }: Props) {
           <a
             key={catalog.id}
             href={`http://dcs4.icata.net/iportal/oc.do?v=DKU00001&d=DKUD001&c=${catalog.path}&p=1`}
-            className='rounded-md p-2'
+            target='_blank'
+            className='rounded-md p-2 hover:opacity-80'
           >
             <div className='overflow-hidden shadow-md lg:h-80'>
               <Image

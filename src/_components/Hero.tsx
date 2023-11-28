@@ -18,7 +18,7 @@ export default function Hero() {
               <br /> 埼玉営業所
             </h1>
 
-            <p className='mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg'>
+            <p className='mb-8 leading-relaxed text-gray-500 dark:text-white md:mb-12 lg:w-4/5 xl:text-lg'>
               このサイトは大黒工業株式会社の公式サイトではありません。営業が独自に新商品や最新情報を発信するブログサイトです。
             </p>
 

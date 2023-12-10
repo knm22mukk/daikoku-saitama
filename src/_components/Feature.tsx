@@ -2,7 +2,7 @@ import { BsCheck2Circle } from 'react-icons/bs';
 
 import Container from '@/_components/Container';
 import PageHeader from '@/_components/PageHeader';
-import { featureItems } from '@/_constants';
+import { featureItems } from '@/_constants/featureItems';
 
 export default function Feature() {
   return (

@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
 import ThemeSwitch from '@/_components/ThemeSwitch';
-import { pageLinks } from '@/_constants';
+import { pageLinks } from '@/_constants/pageLinks';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);

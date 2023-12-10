@@ -1,9 +1,8 @@
 import Image from 'next/image';
 
-import { galleryItems } from '@/_constants';
-
-import Container from './Container';
-import PageHeader from './PageHeader';
+import Container from '@/_components/Container';
+import PageHeader from '@/_components/PageHeader';
+import { galleryItems } from '@/_constants/galleryItems';
 
 export default function Gallery() {
   return (

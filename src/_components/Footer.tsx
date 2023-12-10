@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { pageLinks } from '@/_constants';
+import { pageLinks } from '@/_constants/pageLinks';
 
 export default function Footer() {
   return (

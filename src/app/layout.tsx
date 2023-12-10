@@ -6,8 +6,8 @@ import '@/globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '大黒埼玉',
-  description: '大黒埼玉の特設サイトです',
+  title: '大黒工業 営業ブログ',
+  description: '大黒工業株式会社の営業が商品紹介などを掲載する情報ブログサイトです',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

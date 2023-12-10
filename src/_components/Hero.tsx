@@ -9,13 +9,13 @@ export default function Hero() {
       <div className='mx-auto max-w-screen-2xl px-4 md:px-8'>
         <div className='flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row'>
           <div className='flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-6/12 xl:py-24'>
-            <p className='mb-4 font-semibold text-blue-500 md:mb-6 md:text-lg xl:text-xl'>
-              Daikoku Saitama
+            <p className='mb-4 font-semibold uppercase text-blue-500 md:mb-6 md:text-lg xl:text-xl'>
+              daikoku sales blog
             </p>
 
             <h1 className='mb-8 text-4xl font-bold sm:text-5xl md:mb-12 md:text-6xl'>
               大黒工業株式会社
-              <br /> 埼玉営業所
+              <br /> 営業ブログ
             </h1>
 
             <p className='mb-8 leading-relaxed text-gray-500 dark:text-white md:mb-12 lg:w-4/5 xl:text-lg'>
@@ -35,7 +35,7 @@ export default function Hero() {
           <div className='overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-5/12'>
             <Image
               src='/images/moldimage1280x650.webp'
-              alt='Photo by Fakurian Design'
+              alt='Daikoku Hero Image'
               width={1000}
               height={500}
               className='h-full w-full object-cover object-center'

@@ -1,10 +1,3 @@
-export const pageLinks = [
-  { title: 'ホーム', path: '/' },
-  { title: 'ブログ', path: '/blogs' },
-  { title: 'カタログ', path: '/catalogs' },
-  { title: 'お問い合わせ', path: '/contact' },
-];
-
 export const featureItems = [
   {
     title: '自社製造品が多数',
@@ -35,56 +28,5 @@ export const featureItems = [
     title: 'お客様を一番大切にすること',
     description:
       'お客様ファーストを経営理念に掲げており、激動の社会の中でよりお客様のニーズにあったご提案をしていきます。',
-  },
-];
-
-export const galleryItems = [
-  {
-    title: '紙ナプキン',
-    image: '/images/moldpackMP-2.jpeg',
-  },
-  {
-    title: '紙おしぼり',
-    image: '/images/moldpackMP-2.jpeg',
-  },
-  {
-    title: '箸袋',
-    image: '/images/moldpackMP-2.jpeg',
-  },
-  {
-    title: 'テーブルマット',
-    image: '/images/moldpackMP-2.jpeg',
-  },
-  {
-    title: 'パルプモールド',
-    image: '/images/moldpackMP-2.jpeg',
-  },
-  {
-    title: 'V-BOX',
-    image: '/images/moldpackMP-2.jpeg',
-  },
-  {
-    title: 'カトラリー',
-    image: '/images/moldpackMP-2.jpeg',
-  },
-  {
-    title: '衛生商品',
-    image: '/images/moldpackMP-2.jpeg',
-  },
-  {
-    title: 'キッチンペーパー',
-    image: '/images/moldpackMP-2.jpeg',
-  },
-  {
-    title: 'フルーツキャップ',
-    image: '/images/moldpackMP-2.jpeg',
-  },
-  {
-    title: '醤油・ソース',
-    image: '/images/moldpackMP-2.jpeg',
-  },
-  {
-    title: 'PB製品',
-    image: '/images/moldpackMP-2.jpeg',
   },
 ];

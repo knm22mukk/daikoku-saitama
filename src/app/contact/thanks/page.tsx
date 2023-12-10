@@ -1,11 +1,7 @@
-'use client';
-
 import { Metadata } from 'next';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 
 import Breadcrumb from '@/_components/Breadcrumb';
-import { OutlineButton, PrimaryButton } from '@/_components/Button';
+import ContactResult from '@/_components/ContactResult';
 import Container from '@/_components/Container';
 import PageHeader from '@/_components/PageHeader';
 
@@ -16,7 +12,6 @@ export const metadata: Metadata = {
 };
 
 export default function Thanks() {
-  const router = useRouter();
   return (
     <>
       <Breadcrumb
@@ -29,16 +24,7 @@ export default function Thanks() {
           description='お問合せいただきありがとうございます。担当者より3営業日以内にご連絡させていただきます。'
         />
         <Container>
-          <div className='flex justify-center'>
-            <PrimaryButton
-              type='button'
-              name='前のページに戻る'
-              onClick={() => router.back()}
-            />
-            <Link href='/'>
-              <OutlineButton type='button' name='トップに戻る' />
-            </Link>
-          </div>
+          <ContactResult />
         </Container>
       </div>
     </>

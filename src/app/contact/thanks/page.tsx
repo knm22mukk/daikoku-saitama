@@ -1,5 +1,6 @@
 'use client';
 
+import { Metadata } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
@@ -7,6 +8,12 @@ import Breadcrumb from '@/_components/Breadcrumb';
 import { OutlineButton, PrimaryButton } from '@/_components/Button';
 import Container from '@/_components/Container';
 import PageHeader from '@/_components/PageHeader';
+
+export const metadata: Metadata = {
+  title: 'お問い合わせ完了',
+  description:
+    'お問い合わせ完了ページ || 大黒工業株式会社の営業が商品紹介などを掲載する情報ブログサイトです',
+};
 
 export default function Thanks() {
   const router = useRouter();

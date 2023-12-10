@@ -6,8 +6,30 @@ import '@/globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '大黒工業 営業ブログ',
+  metadataBase: new URL(process.env.BASE_URL as string),
+  title: {
+    template: '%s | 大黒工業 営業ブログ',
+    default: '大黒工業 営業ブログ',
+  },
   description: '大黒工業株式会社の営業が商品紹介などを掲載する情報ブログサイトです',
+  openGraph: {
+    title: {
+      template: '%s | 大黒工業 営業ブログ',
+      default: '大黒工業 営業ブログ',
+    },
+    description: '大黒工業株式会社の営業が商品紹介などを掲載する情報ブログサイトです',
+    type: 'website',
+    images: '/images/moldimage1280x650.webp',
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: false,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

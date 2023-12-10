@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
 import { AiOutlineClockCircle } from 'react-icons/ai';
 
@@ -12,6 +13,19 @@ type Props = {
     id: string;
   };
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const data = await getBlogDetail(params.id);
+  return {
+    title: data.title,
+    description: `${data.description} || 大黒工業株式会社の営業が商品紹介などを掲載する情報ブログサイトです`,
+    openGraph: {
+      title: data.title,
+      description: data.description,
+      images: data.eyecatch.url,
+    },
+  };
+}
 
 export default async function BlogId({ params }: Props) {
   const data = await getBlogDetail(params.id);

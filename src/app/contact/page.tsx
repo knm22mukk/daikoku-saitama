@@ -70,7 +70,11 @@ export default function Contact() {
               className='w-full rounded border px-3 py-2 outline-none ring-blue-300 transition duration-100 focus:ring'
             />
             {errors?.name && (
-              <span id='error-name-required' aria-live='assertive'>
+              <span
+                id='error-name-required'
+                aria-live='assertive'
+                className='text-red-500'
+              >
                 {errors.name.message}
               </span>
             )}
@@ -87,7 +91,11 @@ export default function Contact() {
               className='w-full rounded border px-3 py-2 outline-none ring-blue-300 transition duration-100 focus:ring'
             />
             {errors?.email && (
-              <span id='error-email-required' aria-live='assertive'>
+              <span
+                id='error-email-required'
+                aria-live='assertive'
+                className='text-red-500'
+              >
                 {errors.email.message}
               </span>
             )}
@@ -104,7 +112,11 @@ export default function Contact() {
               className='w-full rounded border px-3 py-2 outline-none ring-blue-300 transition duration-100 focus:ring'
             />
             {errors?.company && (
-              <span id='error-company-required' aria-live='assertive'>
+              <span
+                id='error-company-required'
+                aria-live='assertive'
+                className='text-red-500'
+              >
                 {errors.company.message}
               </span>
             )}
@@ -121,7 +133,11 @@ export default function Contact() {
               className='w-full rounded border px-3 py-2 outline-none ring-blue-300 transition duration-100 focus:ring'
             />
             {errors?.address && (
-              <span id='error-address-required' aria-live='assertive'>
+              <span
+                id='error-address-required'
+                aria-live='assertive'
+                className='text-red-500'
+              >
                 {errors.address.message}
               </span>
             )}
@@ -138,7 +154,11 @@ export default function Contact() {
               className='w-full rounded border px-3 py-2 outline-none ring-blue-300 transition duration-100 focus:ring'
             />
             {errors?.tel && (
-              <span id='error-tel-required' aria-live='assertive'>
+              <span
+                id='error-tel-required'
+                aria-live='assertive'
+                className='text-red-500'
+              >
                 {errors.tel.message}
               </span>
             )}
@@ -154,7 +174,11 @@ export default function Contact() {
               className='h-64 w-full rounded border px-3 py-2 outline-none ring-blue-300 transition duration-100 focus:ring'
             ></textarea>
             {errors?.message && (
-              <span id='error-message-required' aria-live='assertive'>
+              <span
+                id='error-message-required'
+                aria-live='assertive'
+                className='text-red-500'
+              >
                 {errors.message.message}
               </span>
             )}

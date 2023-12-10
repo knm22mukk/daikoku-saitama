@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { AiOutlineClockCircle } from 'react-icons/ai';
 
+import Breadcrumb from '@/_components/Breadcrumb';
 import Container from '@/_components/Container';
 import ConvertDate from '@/_components/ConvertDate';
 import PageHeader from '@/_components/PageHeader';
@@ -16,6 +17,12 @@ export default async function BlogId({ params }: Props) {
   const data = await getBlogDetail(params.id);
   return (
     <>
+      <Breadcrumb
+        lists={[
+          { name: 'ブログ', path: '/blogs' },
+          { name: data.title, path: `/blogs/${data.id}` },
+        ]}
+      />
       <PageHeader
         subHeading={data.id}
         title={data.title}

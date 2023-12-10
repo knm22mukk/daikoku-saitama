@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 
+import Breadcrumb from '@/_components/Breadcrumb';
 import { PrimaryButton } from '@/_components/Button';
 import Container from '@/_components/Container';
 import PageHeader from '@/_components/PageHeader';
@@ -49,6 +50,7 @@ export default function Contact() {
 
   return (
     <>
+      <Breadcrumb lists={[{ name: 'お問い合わせ' }]} />
       <PageHeader
         subHeading='contact'
         title='お問い合わせ'

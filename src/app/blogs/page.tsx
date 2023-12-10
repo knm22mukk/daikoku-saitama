@@ -1,4 +1,5 @@
 import BlogCard from '@/_components/BlogCard';
+import Breadcrumb from '@/_components/Breadcrumb';
 import PageHeader from '@/_components/PageHeader';
 import { getBlogList } from '@/_libs/microcms';
 
@@ -6,6 +7,7 @@ export default async function Blogs() {
   const blogData = await getBlogList();
   return (
     <>
+      <Breadcrumb lists={[{ name: 'ブログ' }]} />
       <PageHeader
         subHeading='blogs'
         title='ブログ記事一覧'
